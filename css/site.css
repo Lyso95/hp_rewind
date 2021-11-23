@@ -73,3 +73,14 @@ pre[class*="language-"] {
     width: 250px;
     height: auto;
 }
+.btn-primary {
+    color: #e7e7e7;
+    background-color: #bb2020;
+    border-color: #292929;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #e92929;
+    border-color: #292929;
+}

@@ -50,11 +50,40 @@
         <h1 class="border-1 border-bottom border-dark mt-5">The Code for Rewind.</h1>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
-                <pre class="line-numbers"><code class="lang-javascript">
-                    //Call Hello World
-                    function helloWorld(){
-                          alert("Hello World");
-                        }</code></pre>
+                <pre class="line-numbers">
+                    <code class="lang-javascript">
+                    //Get the string from the page
+                    //controller
+                    function getValue(){
+                        document.getElementById("alert").classList.add("invisible");
+
+                        let userString = document.getElementById("userString").value;  
+                        let revString = reverseString(userString);
+                        displayString(revString);
+                    }
+                    //Reverse the string
+                    //model
+                    function reverseString(userString) {
+                        let revString = [];
+
+                        //reverse a string using a for loop
+                        for (let index = userString.length - 1; index >= 0; index--) {
+                            revString += userString[index];
+                        }
+
+                        return revString;
+                    }
+
+                    //Display the reversed string to the user
+                    //view
+                    function displayString(revString){
+                        //write to the page
+                        document.getElementById("msg").innerHTML = `Dein Text rückwärts lautet: ${revString}`; 
+                        //turn on alert box
+                        document.getElementById("alert").classList.remove("invisible");
+                    }
+                </code>
+            </pre>
             </div>
             <div class="col-lg-4">
                 <p>
